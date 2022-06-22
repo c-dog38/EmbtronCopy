@@ -32,7 +32,6 @@ illegal = ["/help", "/msk", "/carryldb", "/host", "/hostldb", "/helpedldb", "/ld
 bot = commands.Bot(command_prefix="/", description='Test bot for discord.py')
 slash = SlashCommand(bot, sync_commands=True)
 
-
 @bot.event
 async def on_ready():
     print("Bot is online")
