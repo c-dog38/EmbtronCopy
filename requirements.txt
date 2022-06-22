@@ -1,4 +1,4 @@
-https://github.com/c-dog38/EmbtronCopy@rewrite
+https://github.com/c-dog38/EmbtronCopy
 PyNaCl==1.3.0
 dnspython==1.16.0
 discord.py
