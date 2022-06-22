@@ -4,6 +4,7 @@ import datetime
 from config import *
 from discord.utils import get
 from discord_components import *
+from discord_slash import SlashCommand
 from discord import Embed
 import time
 import os
@@ -22,13 +23,14 @@ illegal = ["/help", "/msk", "/carryldb", "/host", "/hostldb", "/helpedldb", "/ld
 # db[745277161228861461] = [745277161228861461, 69405, 0, 3, 0, 0, 10, 0] #cdog
 # db[538394329333497865] = [538394329333497865, 892005, 1, 0, 0, 0, 1, 0] #king
 # db[712957215308251146] = [712957215308251146, 34000, 2, 0, 3, 1, 0, 0] #lucar
-db[925764075915472967] = [925764075915472967, 54320, 0, 0, 0, 0, 0, 0]  # cnub
-del db['925764075915472967']
+#db[925764075915472967] = [925764075915472967, 54320, 0, 0, 0, 0, 0, 0]  # cnub
+#del db['925764075915472967']
 # del db["Lucaro#2705"]
 # del db["KingMalivore#5150"]
 
 
 bot = commands.Bot(command_prefix="/", description='Test bot for discord.py')
+slash = SlashCommand(bot, sync_commands=True)
 
 
 @bot.event
@@ -37,7 +39,7 @@ async def on_ready():
     DiscordComponents(bot)
 
 
-@bot.command()
+@slash.slash(name="prices", description="Lists claim prices")
 async def prices(ctx):
     prices = discord.Embed(title="CARRY PRICES", color=0xDFFF00)
     prices.add_field(name="Twine Peaks", value=twine, inline=True)
