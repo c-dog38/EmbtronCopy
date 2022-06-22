@@ -50,7 +50,7 @@ async def prices(ctx):
     await ctx.send(embed=prices)
 
 
-@bot.command()
+@slash.slash(name="msk", description="Request an msk carry")
 async def msk(ctx):
     name = ctx.author
     userid = ctx.author.id
@@ -227,7 +227,7 @@ async def msk(ctx):
         await ctx.send(content=f"<@{userid}> please use "f"<#{botChannel}>")
 
 
-@bot.command()
+@slash.slash(name="blackjack", description="Play blackjack")
 async def blackjack(ctx):
     name = ctx.author
     userid = ctx.author.id
@@ -716,7 +716,7 @@ async def blackjack(ctx):
     await res.respond(type=6)
 
 
-@bot.command()
+@slash.slash(name="ldb", description="View emblems leaderboard")
 async def ldb(ctx):
     arr = []
     users = []
@@ -749,7 +749,7 @@ async def ldb(ctx):
     await ctx.send(embed=leaderboard)
 
 
-@bot.command()
+@slash.slash(name="carryldb", description="View top msk carriers")
 async def carryldb(ctx):
     arr = []
     users = []
@@ -782,7 +782,7 @@ async def carryldb(ctx):
     await ctx.send(embed=leaderboard)
 
 
-@bot.command()
+@slash.slash(name="helpedldb", description="View biggest msk nubs")
 async def helpedldb(ctx):
     arr = []
     users = []
@@ -815,7 +815,7 @@ async def helpedldb(ctx):
     await ctx.send(embed=leaderboard)
 
 
-@bot.command()
+@slash.slash(name="hostldb", description="View biggest endurance hosters")
 async def hostldb(ctx):
     arr = []
     users = []
@@ -848,7 +848,7 @@ async def hostldb(ctx):
     await ctx.send(embed=leaderboard)
 
 
-@bot.command()
+@slash.slash(name="leeches", description="View biggest endurance leechers")
 async def leeches(ctx):
     arr = []
     users = []
@@ -881,7 +881,7 @@ async def leeches(ctx):
     await ctx.send(embed=leaderboard)
 
 
-@bot.command()
+@slash.slash(name="host", description="Host an endurance")
 async def host(ctx):
     name = ctx.author
     userid = ctx.author.id
@@ -1204,7 +1204,7 @@ async def host(ctx):
         await ctx.send(content=f"<@{userid}> please use "f"<#{botChannel}>")
 
 
-@bot.command()
+@slash.slash(name="highorlow", description="Play a game of higher or lower fro emblems leaderboard")
 async def highorlow(ctx):
     end = False
     streak = 0
@@ -1344,7 +1344,7 @@ async def highorlow(ctx):
         await ctx.send(content=f"<@{userid}> please use "f"<#{botChannel}>")
 
 
-@bot.command()
+@slash.slash(name="topmali", description="Biggest Malivore fans")
 async def topmali(ctx):
     arr = []
     users = []
@@ -1377,7 +1377,7 @@ async def topmali(ctx):
     await ctx.send(embed=leaderboard)
 
 
-@bot.command()
+@slash.slash(name="potofluck", description="Start a prize pool for emblems")
 async def potofluck(ctx):
     players = []
     prize = 0
@@ -1560,7 +1560,7 @@ async def potofluck(ctx):
         await msg.edit(embed=potEmbed, components=[])
 
 
-@bot.command()
+@slash.slash(name="mali", description="Pet Malivore")
 async def mali(ctx):
     mali = discord.Embed(title="Queen Malivore", color=0xDFFF00)
     mali.set_image(
@@ -1600,7 +1600,7 @@ async def mali(ctx):
             await msg.edit(embed=mali, components=[[pet]])
 
 
-@bot.command()
+@slash.slash(name="highscore", description="Highest scores on higher or lower")
 async def highscore(ctx):
     arr = []
     users = []
@@ -1633,7 +1633,7 @@ async def highscore(ctx):
     await ctx.send(embed=leaderboard)
 
 
-@bot.command()
+@slash.slash(name="roulette", description="Pay to join, could win all or be temp banned")
 async def roulette(ctx):
     players = []
     maxPlayers = 2
