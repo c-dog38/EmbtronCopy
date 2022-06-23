@@ -1776,4 +1776,4 @@ async def roulette(ctx):
     await msg.edit(embed=potEmbed, components=[])
 
 
-bot.run(TOKEN, bot=True, reconnect=True)
+bot.run(os.environ("TOKEN"), bot=True, reconnect=True)
